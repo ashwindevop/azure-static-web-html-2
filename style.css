@@ -1,0 +1,305 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --card-bg: rgba(255, 255, 255, 0.07);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --text-color: #ffffff;
+    --text-sub: #00f2fe;
+    --accent-glow: #4facfe;
+    --btn-bg: linear-gradient(45deg, #ff0844, #ffb199);
+    --btn-reset: linear-gradient(45deg, #43e97b, #38f9d7);
+    --btn-preset: rgba(255, 255, 255, 0.12);
+}
+
+.light-theme {
+    --bg-gradient: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(255, 255, 255, 0.9);
+    --text-color: #2d3748;
+    --text-sub: #4a5568;
+    --accent-glow: #6b46c1;
+    --btn-bg: linear-gradient(45deg, #667eea, #764ba2);
+    --btn-reset: linear-gradient(45deg, #f12711, #f5af19);
+    --btn-preset: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.6));
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle {
+    background: var(--btn-preset);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    background: linear-gradient(to right, #00f2fe, #4facfe, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+    text-transform: uppercase;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-sub);
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.clock-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 20px 40px;
+    margin-top: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.clock-card h2 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--text-sub);
+    margin-bottom: 8px;
+}
+
+.clock-display {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #00f2fe;
+}
+
+.date-display {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-top: 5px;
+}
+
+.timer-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 35px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.presets {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    background: var(--btn-preset);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.preset-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.timer-display {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 12;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: #00f2fe;
+    stroke-width: 12;
+    stroke-linecap: round;
+    stroke-dasharray: 691;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s linear;
+}
+
+.time-text {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: var(--text-sub);
+}
+
+.input-group input {
+    width: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-start {
+    background: var(--btn-bg);
+}
+
+.btn-reset {
+    background: var(--btn-reset);
+    color: #1a1a1a;
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    background: #ff0844;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
